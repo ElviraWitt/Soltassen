@@ -289,6 +289,8 @@ body {
 
     .info {
         gap: 10px;
+        align-self: flex-start;
+        padding-left: 40px;
     }
 
     .info p {
