@@ -42,62 +42,104 @@ body {
    Header / hero
 ========================= */
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding: 100px 10px 0;
-  margin: 0;
   width: 100%;
   background-color: var(--green);
 
   position: relative;
-  z-index: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .logo {
   font-family: "Margin";
   font-weight: var(--h1-font-weight);
-  font-size: 100px;
+  font-size: 122px;
   color: var(--softlight);
   text-align: center;
-  margin-bottom: -30px;
-  z-index: 1;
+
+  position: absolute;
+  top: 64%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+
+  z-index: 2;
+  margin: 0;
 }
 
 /* =========================
    Katter
 ========================= */
 .katter-bild {
-  margin: 0 auto;
   width: 100%;
-  max-width: 1000px;
+  height: auto;
 }
 
 .katter-bild img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  display: block;
 }
 
 /* =========================
    Meny / navigation
 ========================= */
+.main {
+  padding: 20px 20px;
+
+  background-image:
+    linear-gradient(rgba(255, 246, 140, 0.4), rgba(255, 246, 140, 0.4)),
+    url("img/paw.svg");
+  background-repeat: repeat;
+  background-size: 160px 160px;
+
+  margin-top: -10px;
+
+  position: relative;
+  z-index: 2;
+  
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2);
+
+  font-family: Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+.main-container {
+  margin: 10px auto; 
+  padding: 20px;
+  
+
+  background-color: var(--softlight);
+  position: relative;
+  z-index: 1;
+}
+
+.main .main-container .intro {
+  padding: 10px 40px;
+
+  text-align: center;
+}
+
 .meny {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding: 80px 10px;
-  background-color: #FFF68C;
-  background-image:
-  linear-gradient(rgba(255, 246, 140, 0.4), rgba(255, 246, 140, 0.4)),
-  url("img/paw.svg");
-  background-repeat: repeat;
-  background-size: 160px 160px;
-  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2);
-  position: relative;
-  z-index: 1;
-  margin-top: -10px;
+
+  padding: 80px 40px;
+
+  max-width: 900px;
+  margin: 10px auto;       
+
+  background-color: var(--softlight);
+  
+  
 }
 
 .meny-item {
@@ -112,7 +154,7 @@ body {
 
   font-family: "caveat", "margin", Helvetica, sans-serif;
 
-  background-color: var(--softlight);
+  background-color: var(--paws);
   box-sizing: border-box;
   padding: 60px 20px; /* öka höjd här */
   border-radius: 20px;
@@ -199,7 +241,17 @@ body {
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+  .logo {
+    font-size: 98px;
+    top: 64%;
+    left: 46%;
+  }
+
+  .katter-bild {
+    margin-top: -20px;
+  }
+
   .footer-inner {
     flex-direction: column;
     align-items: center;
@@ -216,3 +268,20 @@ body {
     text-align: center;
   }
 }
+
+@media (max-width: 700px) {
+  .logo {
+    font-size: 94px;
+    top: 64%;
+    left: 42%;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    font-size: 82px;
+    top: 64%;
+    left: 40%;
+  }
+}
+
