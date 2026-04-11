@@ -1,0 +1,218 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Margin";
+  src: url("font/margin/Margin\ DEMO.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =========================
+   Variabler
+========================= */
+:root {
+  --green: #C3C471;
+  --softlight: #FFFFBF;
+  --paws: #FFF68C;
+  --black: #000;
+  --pink: #FFBFDB;
+  --h1-font-family: "Caveat-Regular", Helvetica, sans-serif;
+  --h1-font-size: 64px;
+  --h1-font-weight: 400;
+  --h3-font-family: "Inter-Regular", Helvetica, sans-serif;
+  --h3-font-size: 24px;
+  --h3-font-weight: 400;
+}
+
+/* =========================
+   Body / startsida container
+========================= */
+body {
+  margin: 0;
+  font-family: var(--h3-font-family);
+  background-color: #FFF68C;
+  color: var(--black);
+}
+
+/* =========================
+   Header / hero
+========================= */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 100px 10px 0;
+  margin: 0;
+  width: 100%;
+  background-color: var(--green);
+
+  position: relative;
+  z-index: 0;
+}
+
+.logo {
+  font-family: "Margin";
+  font-weight: var(--h1-font-weight);
+  font-size: 100px;
+  color: var(--softlight);
+  text-align: center;
+  margin-bottom: -30px;
+  z-index: 1;
+}
+
+/* =========================
+   Katter
+========================= */
+.katter-bild {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.katter-bild img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   Meny / navigation
+========================= */
+.meny {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 80px 10px;
+  background-color: #FFF68C;
+  background-image:
+  linear-gradient(rgba(255, 246, 140, 0.4), rgba(255, 246, 140, 0.4)),
+  url("img/paw.svg");
+  background-repeat: repeat;
+  background-size: 160px 160px;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  margin-top: -10px;
+}
+
+.meny-item {
+  display: flex;
+  flex-direction: column; /* eller row om du vill ha ikon + text */
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+
+  font-family: "caveat", "margin", Helvetica, sans-serif;
+
+  background-color: var(--softlight);
+  box-sizing: border-box;
+  padding: 60px 20px; /* öka höjd här */
+  border-radius: 20px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  color: var(--black);
+  text-align: center;
+}
+
+.meny-item span {
+  font-size: 42px;
+  text-align: center;
+}
+
+/* =========================
+   Footer
+========================= */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  background-color: var(--green);
+  padding: 60px 20px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-left {
+  display: flex;
+}
+
+.footer-right {
+  display: flex;
+  gap: 40px;
+}
+
+.footer-sektion {
+  display: flex;
+  flex-direction:column;
+  align-items: flex-start;
+  gap: 12px;
+  width: auto;
+}
+
+.footer-sektion h3 {
+  font-family: "Margin";
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin: 0;
+  text-align: left;
+}
+
+.footer-sektion p,
+.footer-sektion a {
+  font-size: 16px;
+  color: var(--black);
+  text-decoration: none;
+  text-align: left;
+}
+
+.footer-sektion ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-sektion ul li {
+  margin-bottom: 8px;
+}
+
+.footer-sektion ul li a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+
+@media (max-width: 800px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-sektion {
+    align-items: center;
+    text-align: center;
+  }
+}

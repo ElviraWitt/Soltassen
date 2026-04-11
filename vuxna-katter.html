@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="katter.css" />
+    <title>Vuxna katter</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">Vuxna katter</div>
+    </header>
+
+
+    <!-- Main -->
+  <main class="katt-container">
+    
+    <!-- En katt -->
+      <article class="katt">
+        <div class="carousel">
+          <div class="carousel-track">
+            <img src="img/Elize/Elize1.PNG" alt="">
+            <img src="img/Elize/Elize2.PNG" alt="">
+            <img src="img/Elize/Elize3.PNG" alt="">
+            <img src="img/Elize/Elize4.PNG" alt="">
+            <img src="img/Elize/Elize5.PNG" alt="">
+          </div>
+
+          <!-- klickzoner -->
+          <div class="carousel-click left"></div>
+          <div class="carousel-click right"></div>
+
+          <div class="carousel-dots"></div>
+        </div>
+
+        <div class="info">
+          <p><strong>Namn:</strong> Elize "Lizen"</p>
+          <p><strong>Född:</strong> ...</p>
+          <p><strong>Personlighet:</strong> Personlighet</p>
+        </div>
+      </article>
+
+      <!-- En katt -->
+      <article class="katt">
+        <div class="carousel">
+          <div class="carousel-track">
+            <img src="img/Tingeling/Tingeling1.png" alt="">
+          </div>
+
+          <!-- klickzoner -->
+          <div class="carousel-click left"></div>
+          <div class="carousel-click right"></div>
+
+          <div class="carousel-dots"></div>
+        </div>
+
+        <div class="info">
+          <p><strong>Namn:</strong> Tingeling</p>
+          <p><strong>Född:</strong> ...</p>
+          <p><strong>Personlighet:</strong> Personlighet</p>
+        </div>
+      </article>
+    </section>
+
+      <!-- En katt-->
+      <article class="katt">
+        <div class="carousel">
+          <div class="carousel-track">
+            <img src="img/Kickan/Kickan1.PNG" alt="">
+            <img src="img/Kickan/Kickan2.PNG" alt="">
+            <img src="img/Kickan/Kickan3.PNG" alt="">
+          </div>
+
+          <!-- klickzoner -->
+          <div class="carousel-click left"></div>
+          <div class="carousel-click right"></div>
+
+          <div class="carousel-dots"></div>
+        </div>
+
+        <div class="info">
+          <p><strong>Namn:</strong> Kickan</p>
+          <p><strong>Född:</strong> ...</p>
+          <p><strong>Personlighet:</strong> Personlighet</p>
+        </div>
+      </article>
+
+      <!-- En katt -->
+      <article class="katt">
+        <div class="carousel">
+          <div class="carousel-track">
+            <img src="img/Zuck/Zuck1.PNG" alt="">
+            <img src="img/Zuck/Zuck2.jpeg" alt="">
+            <img src="img/Zuck/Zuck3.jpeg" alt="">
+            <img src="img/Zuck/Zuck4.PNG" alt="">
+          </div>
+
+          <!-- klickzoner -->
+          <div class="carousel-click left"></div>
+          <div class="carousel-click right"></div>
+
+          <div class="carousel-dots"></div>
+        </div>
+
+        <div class="info">
+          <p><strong>Namn:</strong> Zuck</p>
+          <p><strong>Född:</strong> ...</p>
+          <p><strong>Personlighet:</strong> Personlighet</p>
+        </div>
+      </article>
+
+      <!-- En katt -->
+      <article class="katt">
+        <div class="carousel">
+          <div class="carousel-track">
+            <img src="img/Wasabi/Wasabi1.jpeg" alt="">
+            <img src="img/Wasabi/Wasabi2.jpeg" alt="">
+          </div>
+
+          <!-- klickzoner -->
+          <div class="carousel-click left"></div>
+          <div class="carousel-click right"></div>
+
+          <div class="carousel-dots"></div>
+        </div>
+
+        <div class="info">
+          <p><strong>Namn:</strong> Wasabi</p>
+          <p><strong>Född:</strong> ...</p>
+          <p><strong>Personlighet:</strong> Personlighet</p>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+
+
+      <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+        <div class="footer-left">
+            <div class="footer-sektion">
+            <h3>Meny</h3>
+            <ul>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="om-oss.html">Om oss</a></li>
+                <li><a href="kattungar.html">Våra kattungar</a></li>
+                <li><a href="vuxna-katter.html">Våra vuxna katter</a></li>
+                <li><a href="galleri.html">Galleri</a></li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="footer-right" >
+            <div class="footer-sektion">
+            <h3>Kontakta oss</h3>
+            <ul>
+                <li><a href="mailto:soltassen@gmail.com">E-mail: soltassen@gmail.com</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-sektion">
+            <h3>Sociala medier</h3>
+            <ul>
+                <li><a href="https://www.facebook.com/Soltassen/" target="_blank">Facebook</a></li>
+                <li><a href="https://instagram.com/soltassen" target="_blank">Instagram</a></li>
+            </ul>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll(".carousel").forEach(carousel => {
+        const track = carousel.querySelector(".carousel-track");
+        const images = track.querySelectorAll("img");
+        const dotsContainer = carousel.querySelector(".carousel-dots");
+
+        let index = 0;
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+
+        // skapa dots
+        images.forEach((_, i) => {
+          const dot = document.createElement("span");
+          if (i === 0) dot.classList.add("active");
+
+          dot.addEventListener("click", () => {
+            index = i;
+            updateCarousel();
+          });
+
+          dotsContainer.appendChild(dot);
+        });
+
+        const dots = dotsContainer.querySelectorAll("span");
+
+        function updateCarousel() {
+        const width = Math.round(carousel.getBoundingClientRect().width);
+        track.style.transform = `translateX(-${index * width}px)`;
+
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+        }
+
+        // swipe (touch)
+        track.addEventListener("touchstart", e => {
+          startX = e.touches[0].clientX;
+          currentX = startX;
+          isDragging = true;
+        });
+
+        track.addEventListener("touchmove", e => {
+          if (!isDragging) return;
+          currentX = e.touches[0].clientX;
+        });
+
+        track.addEventListener("touchend", () => {
+          const diff = startX - currentX;
+
+          if (diff > 50) {
+            index = Math.min(index + 1, images.length - 1);
+          } else if (diff < -50) {
+            index = Math.max(index - 1, 0);
+          }
+
+          updateCarousel();
+          isDragging = false;
+        });
+
+        const leftZone = carousel.querySelector(".carousel-click.left");
+        const rightZone = carousel.querySelector(".carousel-click.right");
+
+        rightZone.addEventListener("click", () => {
+          index = Math.min(index + 1, images.length - 1);
+          updateCarousel();
+        });
+
+        leftZone.addEventListener("click", () => {
+          index = Math.max(index - 1, 0);
+          updateCarousel();
+        });
+      });
+    </script>
+</body>
+</html>

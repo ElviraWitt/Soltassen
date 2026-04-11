@@ -1,0 +1,277 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Margin";
+  src: url("font/margin/Margin\ DEMO.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =========================
+   Variabler
+========================= */
+:root {
+  --green: #C3C471;
+  --softlight: #FFFFBF;
+  --paws: #FFF68C;
+  --black: #000;
+  --pink: #FFBFDB;
+  --h1-font-family: "Caveat-Regular", Helvetica, sans-serif;
+  --h1-font-size: 64px;
+  --h1-font-weight: 400;
+  --h3-font-family: "Inter-Regular", Helvetica, sans-serif;
+  --h3-font-size: 24px;
+  --h3-font-weight: 400;
+}
+
+/* =========================
+   Body / startsida container
+========================= */
+body {
+    margin: 0;
+    font-family: var(--h3-font-family);
+    background-color: #FFF68C;
+    background-image:
+    linear-gradient(rgba(255, 246, 140, 0.4), rgba(255, 246, 140, 0.4)),
+    url("img/paw.svg");
+    background-repeat: repeat;
+    background-size: 160px 160px;
+    color: var(--black);
+}
+
+/* =========================
+   Header / hero
+========================= */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 100px 0;
+  margin: 0;
+  width: 100%;
+  background-color: var(--green);
+
+  position: relative;
+  z-index: 0;
+}
+
+.logo {
+    font-family: "Margin";
+    font-weight: var(--h1-font-weight);
+    font-size: var(--h1-font-size);
+    color: var(--softlight);
+    text-align: center;
+    z-index: 1;
+}
+
+/* =========================
+   Main
+========================= */
+.main {
+    margin-top: -10px;
+}
+
+.about {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  background-color: var(--softlight);
+}
+
+/* intro */
+.about-intro p {
+  font-family: Helvetica, sans-serif;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+/* sections */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica, sans-serif;
+}
+
+.about-section h2 {
+  font-family: "Caveat", Helvetica, sans-serif;
+  font-size: 36px;
+  margin: 0;
+}
+
+/* brödtext */
+.lead {
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+  line-height: 1.4;
+}
+
+/* split layout */
+.split {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.split img {
+  width: 550px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--pink);
+}
+
+.split p {
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+/* lista */
+.list-container p{
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+.list-container ul {
+  padding-left: 20px;
+  font-family: "Caveat";
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 5px 0;
+}
+
+/* =========================
+   Footer
+========================= */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  background-color: var(--green);
+  padding: 60px 20px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-left {
+  display: flex;
+}
+
+.footer-right {
+  display: flex;
+  gap: 40px;
+}
+
+.footer-sektion {
+  display: flex;
+  flex-direction:column;
+  align-items: flex-start;
+  gap: 12px;
+  width: auto;
+}
+
+.footer-sektion h3 {
+  font-family: "Margin";
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin: 0;
+  text-align: left;
+}
+
+.footer-sektion p,
+.footer-sektion a {
+  font-size: 16px;
+  color: var(--black);
+  text-decoration: none;
+  text-align: left;
+}
+
+.footer-sektion ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-sektion ul li {
+  margin-bottom: 8px;
+}
+
+.footer-sektion ul li a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+
+@media (max-width: 800px) {
+  .about {
+    margin: 40px 20px;
+    padding: 20px 40px;
+    }
+
+    /* intro */
+    .about-intro p {
+    font-size: 18px;
+    }
+
+    /* sections */
+    .about-section h2 {
+    font-size: 28px;
+    }
+
+    /* brödtext */
+    .lead {
+    font-size: 18px;
+    }
+
+    /* split layout */
+    .split img {
+    width: 550px;
+    height: auto;
+    }
+
+    .split p {
+    font-size: 18px;
+    }
+
+    /* lista */
+    .list {
+    font-size: 22px;
+    line-height: 1.5;
+    }  
+    
+    .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 40px;
+    }
+
+  .footer-sektion {
+    align-items: center;
+    text-align: center;
+    }
+
+
+}
