@@ -133,11 +133,13 @@ body {
   width: 250px;
   overflow: hidden;
   touch-action: pan-y;
+  user-select: none;
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.3s ease;
+  will-change: transform;
 }
 
 .carousel img {
