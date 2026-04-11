@@ -208,18 +208,19 @@
         }
 
         // swipe (touch)
-        track.addEventListener("touchstart", e => {
+        carousel.addEventListener("touchstart", e => {
           startX = e.touches[0].clientX;
-          currentX = startX;
           isDragging = true;
         });
 
-        track.addEventListener("touchmove", e => {
+        carousel.addEventListener("touchmove", e => {
           if (!isDragging) return;
           currentX = e.touches[0].clientX;
         });
 
-        track.addEventListener("touchend", () => {
+        carousel.addEventListener("touchend", () => {
+          if (!isDragging) return;
+
           const diff = startX - currentX;
 
           if (diff > 50) {
