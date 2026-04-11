@@ -283,11 +283,7 @@ body {
 @media (max-width: 800px) {
 
     .kattunge {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: nowrap;
+        flex-direction: column;
         gap: 20px;
     }
 
