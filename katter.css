@@ -20,7 +20,7 @@
     --paws: #FFF68C;
     --black: #000;
     --pink: #FFBFDB;
-    --h1-font-family: "Caveat-Regular", Helvetica, sans-serif;
+    --h1-font-family: "Caveat", Helvetica, sans-serif;
     --h1-font-size: 64px;
     --h1-font-weight: 400;
     --h3-font-family: "Inter-Regular", Helvetica, sans-serif;
@@ -35,12 +35,21 @@ body {
     margin: 0;
     font-family: var(--h3-font-family);
     background-color: #FFF68C;
-    background-image:
-    linear-gradient(rgba(255, 246, 140, 0.4), rgba(255, 246, 140, 0.4)),
-    url("img/paw.svg");
-    background-repeat: repeat;
-    background-size: 160px 160px;
     color: var(--black);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background-image: url("img/paw-print-background-pattern/Paw Print Background Pattern.jpg");
+  background-size: 400px;
+  background-repeat: repeat;
+
+  opacity: 0.1;
+
+  z-index: -1;
 }
 
 /* =========================
@@ -57,7 +66,6 @@ body {
     background-color: var(--green);
 
     position: relative;
-    z-index: 0;
 }
 
 .logo {
@@ -73,6 +81,29 @@ body {
 /* =========================
    Main
 ========================= */
+
+
+#kickan {
+  scroll-margin-top: 100px;
+}
+
+#elize {
+  scroll-margin-top: 100px;
+}
+
+#wasabi {
+  scroll-margin-top: 100px;
+}
+
+#tingeling {
+  scroll-margin-top: 100px;
+}
+
+#zuck {
+  scroll-margin-top: 100px;
+}
+
+
 .katt-container {
     display: flex;
     flex-direction: column;
@@ -185,6 +216,29 @@ body {
 .info p:last-child {
     margin-top: 20px;
     font-size: 30px;
+}
+
+.kull-btn {
+  display: inline-flex;
+  width: fit-content;
+  align-self: flex-start;
+  margin: 30px 60px 0 ;
+  padding: 6px 12px;
+
+  background-color: var(--paws);
+  color: var(--black);
+  text-decoration: none;
+
+  border-radius: 10px;
+  font-family: "Caveat", Helvetica, sans-serif;
+  font-size: 22px;
+
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.kull-btn:hover {
+  box-shadow: 0 6px 10px rgba(0,0,0,0.25);
 }
 
 

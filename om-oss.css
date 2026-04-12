@@ -31,16 +31,30 @@
 /* =========================
    Body / startsida container
 ========================= */
+
+
+
 body {
-    margin: 0;
-    font-family: var(--h3-font-family);
-    background-color: #FFF68C;
-    background-image:
-    linear-gradient(rgba(255, 246, 140, 0.4), rgba(255, 246, 140, 0.4)),
-    url("img/paw.svg");
-    background-repeat: repeat;
-    background-size: 160px 160px;
-    color: var(--black);
+  position: relative;
+  margin: 0;
+  font-family: var(--h3-font-family);
+  color: var(--black);
+
+  background-color: var(--paws);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("img/paw-print-background-pattern/Paw Print Background Pattern.jpg");
+  background-size: 400px;
+  background-repeat: repeat;
+
+  opacity: 0.1;
+
+  z-index: -1;
 }
 
 /* =========================
@@ -72,8 +86,12 @@ body {
 /* =========================
    Main
 ========================= */
+
+
 .main {
-    margin-top: -10px;
+  position: relative;
+  margin: 0;
+
 }
 
 .about {
@@ -98,6 +116,19 @@ body {
   display: flex;
   flex-direction: column;
   font-family: Helvetica, sans-serif;
+}
+
+#filosofi {
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-section img {
+  width: 200px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--pink);
 }
 
 .about-section h2 {
@@ -255,7 +286,17 @@ body {
     .list {
     font-size: 22px;
     line-height: 1.5;
-    }  
+    }
+    
+    #filosofi {
+      gap: 0px;
+    }
+
+    .about-section img {
+      width: 150px;
+      border-radius: 12px;
+      border: 1px solid var(--pink);
+    }
     
     .footer-inner {
     flex-direction: column;

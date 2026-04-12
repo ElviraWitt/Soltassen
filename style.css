@@ -20,7 +20,7 @@
   --paws: #FFF68C;
   --black: #000;
   --pink: #FFBFDB;
-  --h1-font-family: "Caveat-Regular", Helvetica, sans-serif;
+  --h1-font-family: "Caveat", Helvetica, sans-serif;
   --h1-font-size: 64px;
   --h1-font-weight: 400;
   --h3-font-family: "Inter-Regular", Helvetica, sans-serif;
@@ -90,14 +90,22 @@ body {
 /* =========================
    Meny / navigation
 ========================= */
+.main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("img/paw-print-background-pattern/Paw Print Background Pattern.jpg");
+  background-size: 400px 400px;
+  background-repeat: repeat;
+
+  opacity: 0.1;
+}
+
 .main {
   padding: 20px 20px;
 
-  background-image:
-    linear-gradient(rgba(255, 246, 140, 0.4), rgba(255, 246, 140, 0.4)),
-    url("img/paw.svg");
-  background-repeat: repeat;
-  background-size: 160px 160px;
+  background-color: var(--paws);
 
   margin-top: -10px;
 
@@ -110,63 +118,138 @@ body {
   font-size: 22px;
 }
 
+
+
 .main-container {
   margin: 10px auto; 
-  padding: 20px;
-  
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
 
   background-color: var(--softlight);
   position: relative;
   z-index: 1;
 }
 
-.main .main-container .intro {
+.intro {
   padding: 10px 40px;
+  max-width: 1000px;
 
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.meny {
+.kattungar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 1000px;
+}
+
+.kattungar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-kattunge {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
-
-  padding: 80px 40px;
-
-  max-width: 900px;
-  margin: 10px auto;       
-
-  background-color: var(--softlight);
-  
-  
 }
 
-.meny-item {
+.kattunge-btns {
   display: flex;
-  flex-direction: column; /* eller row om du vill ha ikon + text */
-  align-items: center;
-  justify-content: center;
+  gap: 10px;
+  margin-bottom: 50px;
+}
 
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+.kattunge-btn {
+  padding: 20px 40px;
+  border-radius: 20px;
+  margin: 0;
 
   font-family: "caveat", "margin", Helvetica, sans-serif;
+  font-size: 24px;
 
   background-color: var(--paws);
-  box-sizing: border-box;
-  padding: 60px 20px; /* öka höjd här */
-  border-radius: 20px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  text-decoration: none;
   color: var(--black);
-  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.meny-item span {
-  font-size: 42px;
+.kattungar-container img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 20px;
+  
+}
+
+.vuxna-katter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 30px;
+
   text-align: center;
+
+  margin: 20px auto;       
+}
+
+.katt-btns {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+.katt-btn {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: auto;
+
+  border-radius: 20px;
+  margin: 0;
+  overflow: hidden;
+
+  text-decoration: none;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.katt-btn img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  overflow: hidden;
+}
+
+.katt-namn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  padding: 10px;
+  text-align: center;
+
+  background-color: rgb(255, 245, 140);
+  
+  border-radius: 0px 0px 10px 10px;
+  
+  font-family: "caveat", Helvetica, sans-serif;
+  font-size: 22px;
+  color: var(--black);
 }
 
 /* =========================
@@ -250,6 +333,14 @@ body {
 
   .katter-bild {
     margin-top: -20px;
+  }
+
+  .main .main-container h2{
+    font-size: 26px;
+  }
+
+  .main .main-container p{
+    font-size: 20px;
   }
 
   .footer-inner {
