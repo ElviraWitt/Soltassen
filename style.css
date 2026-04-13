@@ -254,6 +254,11 @@ body {
   max-width: 1000px;
 }
 
+.kattungar .mail {
+  color: var(--black);
+  text-decoration: underline;
+}
+
 .kattungar-container {
   display: flex;
   flex-direction: row;

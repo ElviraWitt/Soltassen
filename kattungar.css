@@ -334,7 +334,16 @@ body::before {
   font-family: "Caveat", Helvetica, sans-serif;
 }
 
+.status.tingad {
+  color: orange;
+}
+
+.status.tillganglig {
+  color: var(--green);
+}
+
 .info strong {
+  color: black;
   font-weight: 600;
   font-size: 18px;
   font-family: Helvetica, sans-serif;

@@ -223,30 +223,30 @@ body::before {
 }
 
 .katt {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 20px;
 
-    text-align: left;
-    gap: 40px;
+  text-align: left;
+  gap: 40px;
 
-    background-color: var(--softlight);
-    box-sizing: border-box;
-    padding: 40px;
-    border: 2px solid rgba(0,0,0,0.08);
+  background-color: var(--softlight);
+  box-sizing: border-box;
+  padding: 40px;
+  border: 2px solid rgba(0,0,0,0.08);
 }
 
 .carousel {
-    position: relative;
-    width: 250px;
-    flex: 0 0 auto;
-    touch-action: pan-y;
-    user-select: none; 
-    overflow: hidden;
+  position: relative;
+  width: 250px;
+  flex: 0 0 auto;
+  touch-action: pan-y;
+  user-select: none; 
+  overflow: hidden;
 }
 
 .carousel-track {
@@ -305,26 +305,26 @@ body::before {
 }
 
 .info {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .info p {
-    margin: 0;
-    font-size: 32px;
-    font-family: "Caveat", Helvetica, sans-serif;
+  margin: 0;
+  font-size: 24px;
+  font-family: "Caveat", Helvetica, sans-serif;
 }
 
 .info strong {
-    font-weight: 600;
-    font-size: 18px;
-    font-family: Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: Helvetica, sans-serif;
 }
 
 .info p:last-child {
-    margin-top: 20px;
-    font-size: 30px;
+  margin-top: 20px;
+  font-size: 30px;
 }
 
 .kull-btn {
