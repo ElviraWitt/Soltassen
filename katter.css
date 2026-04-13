@@ -425,40 +425,48 @@ body::before {
 
 @media (max-width: 800px) {
 
-    .katt {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        gap: 40px;
-    }
+  .side-menu {
+    width: 100%;
+    gap: 3px;
+  }
 
-    .info {
-        align-self: flex-start;
-        padding-left: 60px;
-        gap: 2px;
-    }
+  .side-menu a {
+    font-size: 18px;
+  }
 
-    .carousel {
-        width: 300px;
-    }
+  .katt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    gap: 40px;
+  }
 
-    .carousel img {
-        height: 250px;
-    }
+  .info {
+    gap: 2px;
+  }
 
-    .footer-inner {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
+  .carousel {
+    width: 300px;
+}
 
-    .footer-right {
-        flex-direction: column;
-        gap: 40px;
-    }
+  .carousel img {
+    height: 250px;
+  }
 
-    .footer-sektion {
-        align-items: center;
-        text-align: center;
-    }
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-sektion {
+    align-items: center;
+    text-align: center;
+  }
 }

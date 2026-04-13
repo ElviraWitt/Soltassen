@@ -39,6 +39,7 @@ html {
 body {
     margin: 0;
     font-family: var(--h3-font-family);
+    font-size: clamp(14px, 2.5vw, 22px);;
     background-color: #FFF68C;
     color: var(--black);
 }
@@ -64,26 +65,26 @@ body::before {
    Header / hero
 ========================= */
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    padding: 100px 0;
-    margin: 0;
-    width: 100%;
-    background-color: var(--green);
+  padding: 100px 0;
+  margin: 0;
+  width: 100%;
+  background-color: var(--green);
 
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .logo {
-    font-family: "Margin";
-    font-weight: var(--h1-font-weight);
-    font-size: var(--h1-font-size);
-    color: var(--softlight);
-    text-align: center;
-    z-index: 1;
+  font-family: "Margin";
+  font-weight: var(--h1-font-weight);
+  font-size: clamp(42px, 10vw, 122px);
+  color: var(--softlight);
+  text-align: center;
+  z-index: 1;
 }
 
 .hamburger {
@@ -138,7 +139,7 @@ body::before {
 
 .side-menu a {
   color: black;
-  font-size: 32px;
+  font-size: clamp(18px, 5vw, 32px);
   text-decoration: none;
   font-family: "Caveat";
 }
@@ -421,6 +422,15 @@ body::before {
   .carousel {
     width: 100%;
   }
+
+  .side-menu {
+      width: 100%;
+      gap: 3px;
+    }
+
+    .side-menu a {
+      font-size: 18px;
+    }
 
   .info {
     gap: 10px;

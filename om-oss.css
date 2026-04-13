@@ -38,6 +38,7 @@ body {
   position: relative;
   margin: 0;
   font-family: var(--h3-font-family);
+  font-size: clamp(14px, 2.5vw, 22px);;
   color: var(--black);
 
   background-color: var(--paws);
@@ -77,7 +78,7 @@ body::before {
 .logo {
   font-family: "Margin";
   font-weight: var(--h1-font-weight);
-  font-size: var(--h1-font-size);
+  font-size: clamp(42px, 10vw, 122px);
   color: var(--softlight);
   text-align: center;
   z-index: 1;
@@ -135,7 +136,7 @@ body::before {
 
 .side-menu a {
   color: black;
-  font-size: 32px;
+  font-size: clamp(18px, 5vw, 32px);
   text-decoration: none;
   font-family: "Caveat";
 }
@@ -192,7 +193,7 @@ body::before {
 .main {
   position: relative;
   margin: 0;
-
+  font-size: clamp(18px, 20px, 22px);
 }
 
 .about {
@@ -356,6 +357,15 @@ body::before {
   .about {
     margin: 40px 20px;
     padding: 20px 40px;
+    }
+
+    .side-menu {
+      width: 100%;
+      gap: 3px;
+    }
+
+    .side-menu a {
+      font-size: 18px;
     }
 
     /* intro */
