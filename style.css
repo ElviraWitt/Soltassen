@@ -34,6 +34,7 @@
 body {
   margin: 0;
   font-family: var(--h3-font-family);
+  font-size: clamp(14px, 2.5vw, 22px);
   background-color: #FFF68C;
   color: var(--black);
 }
@@ -60,7 +61,7 @@ body {
 .logo {
   font-family: "Margin";
   font-weight: var(--h1-font-weight);
-  font-size: 122px;
+  font-size: clamp(42px, 10vw, 122px);
   color: var(--softlight);
   text-align: center;
 
@@ -125,7 +126,7 @@ body {
 
 .side-menu a {
   color: black;
-  font-size: 32px;
+  font-size: clamp(18px, 5vw, 32px);
   text-decoration: none;
   font-family: "Caveat";
 }
@@ -145,6 +146,7 @@ body {
 
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 30px;
 
   padding: 100px 30px;
@@ -217,7 +219,7 @@ body {
   box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2);
 
   font-family: Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: clamp(18px, 20px, 22px);
 }
 
 
@@ -275,12 +277,12 @@ body {
 }
 
 .kattunge-btn {
-  padding: 20px 40px;
+  padding: clamp(10px, 16px, 20px);
   border-radius: 20px;
   margin: 0;
 
   font-family: "caveat", "margin", Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: clamp(24px, 2.5vw, 28px);
 
   background-color: var(--paws);
   color: var(--black);
@@ -342,7 +344,7 @@ body {
   left: 0;
   width: 100%;
 
-  padding: 10px;
+  padding: clamp(3px, 10px, 12px);
   text-align: center;
 
   background-color: rgb(255, 245, 140);
@@ -350,7 +352,7 @@ body {
   border-radius: 0px 0px 10px 10px;
   
   font-family: "caveat", Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: clamp(24px, 2.5vw, 28px);
   color: var(--black);
 }
 
@@ -451,6 +453,15 @@ body {
     left: 46%;
   }
 
+  .side-menu {
+    width: 100%;
+    gap: 3px;
+  }
+
+  .side-menu a {
+    font-size: 18px;
+  }
+
   .katter-bild {
     margin-top: -20px;
   }
@@ -481,6 +492,7 @@ body {
 }
 
 @media (max-width: 700px) {
+
   .logo {
     font-size: 94px;
     top: 64%;
@@ -490,9 +502,17 @@ body {
 
 @media (max-width: 600px) {
   .logo {
-    font-size: 82px;
+    font-size: 52px;
     top: 64%;
     left: 40%;
+  }
+  
+  :root {
+    --h1-font-size: 42px;
+    --h1-font-weight: 300;
+    --h3-font-family: "Inter-Regular", Helvetica, sans-serif;
+    --h3-font-size: 34px;
+    --h3-font-weight: 300;
   }
 }
 
