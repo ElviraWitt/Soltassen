@@ -464,3 +464,12 @@ body::before {
     text-align: center;
   }
 }
+
+@media (max-width: 400px) {
+  .info p {
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
