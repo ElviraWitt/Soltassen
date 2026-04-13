@@ -267,6 +267,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .kattunge-btns {
@@ -464,6 +465,14 @@ body {
 
   .side-menu a {
     font-size: 18px;
+  }
+
+  .nav-kattunge {
+    text-align: center;
+  }
+
+  .nav-kattunge p {
+    text-align: center;
   }
 
   .katter-bild {
