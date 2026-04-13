@@ -466,10 +466,15 @@ body::before {
 }
 
 @media (max-width: 400px) {
+
   .info p {
-    font-size: 18px;
+    font-size: 20px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .info strong {
+    font-size: 14px;
   }
 }
