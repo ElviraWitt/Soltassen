@@ -301,6 +301,8 @@ body {
   align-items: flex-end;
   gap: 30px;
 
+  max-width: 1000px;
+
   text-align: center;
 
   margin: 20px auto;       
@@ -313,6 +315,8 @@ body {
   gap: 10px;
 
   flex-wrap: wrap;
+
+  max-width: 1000px;
 }
 
 .katt-btn {
@@ -466,7 +470,7 @@ body {
   }
 
   .katt-btns {
-    gap: 3px;
+    gap: 5px;
 
     flex-wrap: wrap;
   }
