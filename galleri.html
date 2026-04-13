@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="kattungar.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
     <style>
         body {
         background-color: #FFFFBF;
@@ -17,8 +18,24 @@
   </style>
     <title>Soltassen</title>
 </head>
+<body>
 
     <header class="header">
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="menu-overlay" id="overlay"></div>
+
+        <nav class="side-menu" id="menu">
+            <a href="index.html">Hem</a>
+            <a href="om-oss.html">Om oss</a>
+            <a href="kattungar.html">Kattungar</a>
+            <a href="vuxna-katter.html">Vuxna katter</a>
+        </nav>
+
         <div class="logo">Galleri</div>
     </header>
 
@@ -64,7 +81,35 @@
         </div>
     </footer>
 
-<body>
+    <script>
+        const btn = document.getElementById("hamburger");
+        const menu = document.getElementById("menu");
+        const overlay = document.getElementById("overlay");
+
+        function closeMenu() {
+          btn.classList.remove("active");
+          menu.classList.remove("active");
+          overlay.classList.remove("active");
+        }
+
+        btn.addEventListener("click", () => {
+          btn.classList.toggle("active");
+          menu.classList.toggle("active");
+          overlay.classList.toggle("active");
+        });
+
+        overlay.addEventListener("click", closeMenu);
+
+        document.addEventListener("click", (e) => {
+          if (!menu.contains(e.target) && !btn.contains(e.target)) {
+            closeMenu();
+          }
+        });
+
+        menu.querySelectorAll("a").forEach(a => {
+          a.addEventListener("click", closeMenu);
+        });
+  </script>
     
 </body>
 </html>

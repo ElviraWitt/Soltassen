@@ -9,9 +9,24 @@
 </head>
 <body>
 
-    <header class="header">
-        <div class="logo">Vuxna katter</div>
-    </header>
+  <header class="header">
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="menu-overlay" id="overlay"></div>
+
+    <nav class="side-menu" id="menu">
+      <a href="index.html">Hem</a>
+      <a href="om-oss.html">Om oss</a>
+      <a href="kattungar.html">Kattungar</a>
+      <a href="galleri.html">Galleri</a>
+    </nav>
+
+    <div class="logo">Vuxna katter</div>
+  </header>
 
 
     <!-- Main -->
@@ -177,6 +192,37 @@
     </footer>
 
     <script>
+      const btn = document.getElementById("hamburger");
+        const menu = document.getElementById("menu");
+        const overlay = document.getElementById("overlay");
+
+        function closeMenu() {
+          btn.classList.remove("active");
+          menu.classList.remove("active");
+          overlay.classList.remove("active");
+        }
+
+        btn.addEventListener("click", () => {
+          btn.classList.toggle("active");
+          menu.classList.toggle("active");
+          overlay.classList.toggle("active");
+        });
+
+        overlay.addEventListener("click", closeMenu);
+
+        document.addEventListener("click", (e) => {
+          if (!menu.contains(e.target) && !btn.contains(e.target)) {
+            closeMenu();
+          }
+        });
+
+        menu.querySelectorAll("a").forEach(a => {
+          a.addEventListener("click", closeMenu);
+        });
+
+
+
+
       document.querySelectorAll(".carousel").forEach(carousel => {
         const track = carousel.querySelector(".carousel-track");
         const images = track.querySelectorAll("img");

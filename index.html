@@ -12,6 +12,21 @@
 
   <!-- Header -->
   <header class="header">
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="menu-overlay" id="overlay"></div>
+
+    <nav class="side-menu" id="menu">
+      <a href="om-oss.html">Om oss</a>
+      <a href="kattungar.html">Kattungar</a>
+      <a href="vuxna-katter.html">Vuxna katter</a>
+      <a href="galleri.html">Galleri</a>
+    </nav>
+
     <div class="hero">
       <div class="logo">Soltassen</div>
 
@@ -138,6 +153,37 @@
       Pattern Designed by Freepik
     </a>
   </footer>
+
+  <script>
+    const btn = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
+    const overlay = document.getElementById("overlay");
+
+    function closeMenu() {
+      btn.classList.remove("active");
+      menu.classList.remove("active");
+      overlay.classList.remove("active");
+    }
+
+    function toggleMenu() {
+      btn.classList.toggle("active");
+      menu.classList.toggle("active");
+      overlay.classList.toggle("active");
+    }
+
+    btn.addEventListener("click", toggleMenu);
+    overlay.addEventListener("click", closeMenu);
+
+    // klick utanför (overlay)
+    document.addEventListener("click", (e) => {
+    const isClickInsideMenu = menu.contains(e.target);
+    const isClickOnButton = btn.contains(e.target);
+
+    if (!isClickInsideMenu && !isClickOnButton) {
+      closeMenu();
+    }
+  });
+  </script>
 
 </body>
 </html>
