@@ -168,7 +168,7 @@ body::before {
 .logo {
   font-family: "Margin";
   font-weight: var(--h1-font-weight);
-  font-size: clamp(42px, 10vw, 122px);
+  font-size: clamp(54px, 10vw, 122px);
   color: var(--softlight);
   text-align: center;
   z-index: 1;

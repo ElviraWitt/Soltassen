@@ -536,6 +536,7 @@ body::before {
 
   .info {
     gap: 2px;
+    align-self: flex-start;
   }
 
   .carousel {
