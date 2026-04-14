@@ -7,8 +7,24 @@
   <link rel="icon" href="../img/icon.png" type="image/png">
   <link rel="stylesheet" href="om-oss.css" />
   <title>Soltassen</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
 </head>
 <body>
+
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div id="loader-cat"></div>
+      <p>Sidan laddas
+        <span class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </p>
+    </div>
+  </div>
 
   <!-- Header -->
   <header class="header">
@@ -139,32 +155,44 @@
   </footer>
 
   <script>
-        const btn = document.getElementById("hamburger");
-        const menu = document.getElementById("menu");
-        const overlay = document.getElementById("overlay");
 
-        function closeMenu() {
-          btn.classList.remove("active");
-          menu.classList.remove("active");
-          overlay.classList.remove("active");
-        }
+    window.addEventListener("load", () => {
+    document.getElementById("loader").style.display = "none";
+    });
 
-        btn.addEventListener("click", () => {
-          btn.classList.toggle("active");
-          menu.classList.toggle("active");
-          overlay.classList.toggle("active");
-        });
+    lottie.loadAnimation({
+      container: document.getElementById("loader-cat"),
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "../img/cat inside the box.json"
+    });
+    const btn = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
+    const overlay = document.getElementById("overlay");
 
-        overlay.addEventListener("click", closeMenu);
+    function closeMenu() {
+      btn.classList.remove("active");
+      menu.classList.remove("active");
+      overlay.classList.remove("active");
+    }
 
-        document.addEventListener("click", (e) => {
-          if (!menu.contains(e.target) && !btn.contains(e.target)) {
-            closeMenu();
-          }
-        });
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      menu.classList.toggle("active");
+      overlay.classList.toggle("active");
+    });
 
-        menu.querySelectorAll("a").forEach(a => {
-          a.addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+
+    document.addEventListener("click", (e) => {
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    menu.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", closeMenu);
         });
   </script>
 
