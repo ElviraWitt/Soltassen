@@ -163,7 +163,7 @@ body::before {
 .logo {
   font-family: "Margin";
   font-weight: var(--h1-font-weight);
-  font-size: clamp(42px, 10vw, 122px);
+  font-size: clamp(54px, 10vw, 122px);
   color: var(--softlight);
   text-align: center;
   z-index: 1;
@@ -311,13 +311,6 @@ body::before {
   margin: 0;
 }
 
-/* brödtext */
-.lead {
-  font-size: 20px;
-  font-family: Helvetica, sans-serif;
-  line-height: 1.4;
-}
-
 /* split layout */
 .split {
   display: flex;
@@ -329,7 +322,7 @@ body::before {
 .split img {
   flex: 1;
   width: 100%;
-  max-width: 400px;
+  max-width: 200px;
   height: auto;
   border-radius: 12px;
   border: 1px solid var(--pink);
@@ -450,68 +443,70 @@ body::before {
   .about {
     margin: 40px 20px;
     padding: 20px 40px;
-    }
+  }
 
-    .side-menu {
-      width: 100%;
-      gap: 3px;
-    }
+  .side-menu {
+    width: 100%;
+    gap: 3px;
+  }
 
-    .side-menu a {
-      font-size: 18px;
-    }
-
-    /* intro */
-    .about-intro p {
+  .side-menu a {
     font-size: 18px;
-    }
+  }
 
-    /* sections */
-    .about-section h2 {
+  /* intro */
+  .about-intro p {
+    font-size: 18px;
+  }
+
+  /* sections */
+  .about-section h2 {
     font-size: 28px;
-    }
+  }
 
-    /* brödtext */
-    .lead {
-    font-size: 18px;
-    }
-
-    /* split layout */
-    .split img {
+  /* split layout */
+  .split img {
     width: 550px;
     height: auto;
-    }
+  }
 
-    .split p {
+  .split p {
     font-size: 18px;
-    }
+  }
 
-    /* lista */
-    .list {
+  /* lista */
+  .list {
     font-size: 22px;
     line-height: 1.5;
-    }
+  }
 
-    .list-container img {
-      flex: 1;
-      max-width: 100px;
-    }
-        
-    .footer-inner {
+  .list-container img {
+    flex: 1;
+    max-width: 100px;
+  }
+      
+  .footer-inner {
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    }
+  }
 
   .footer-right {
     flex-direction: column;
     gap: 40px;
-    }
+  }
 
   .footer-sektion {
     align-items: center;
     text-align: center;
-    }
+  }
 
 
+}
+
+@media (max-width: 600px) {
+  .about {
+    margin: 30px 15px;
+    padding: 5px 20px;
+  }
 }

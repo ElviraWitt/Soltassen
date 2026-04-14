@@ -295,7 +295,7 @@ body {
 }
 
 .main {
-  padding: 20px 20px;
+  padding: 20px 30px;
 
   background-color: var(--paws);
 
@@ -362,10 +362,14 @@ body {
   justify-content: center;
 }
 
+.nav-kattunge h2 {
+  margin-bottom: 2px;
+}
+
 .kattunge-btns {
   display: flex;
   gap: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .kattunge-btn {
@@ -600,6 +604,7 @@ body {
   .main-container {
     margin: 10px auto; 
     padding: 20px;
+    gap: 60px;
   }
 
   .intro {
