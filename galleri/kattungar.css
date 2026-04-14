@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "Margin";
-  src: url("font/margin/Margin\ DEMO.otf");
+  src: url("../font/margin/Margin\ DEMO.otf");
   font-weight: normal;
   font-style: normal;
 }
@@ -28,17 +28,18 @@
     --h3-font-weight: 400;
 }
 
+/* =========================
+   Body / startsida container
+========================= */
 html {
   position: relative;
   min-height: 100%;
 }
 
-/* =========================
-   Body / startsida container
-========================= */
 body {
     margin: 0;
     font-family: var(--h3-font-family);
+    font-size: clamp(14px, 2.5vw, 22px);;
     background-color: #FFF68C;
     color: var(--black);
 }
@@ -52,10 +53,11 @@ body::before {
   height: 100%;
 
   background-image: url("img/paw-print-background-pattern/Paw Print Background Pattern.jpg");
-  background-size: 1600px;
+  background-size: 400px;
   background-repeat: repeat;
 
   opacity: 0.1;
+
   z-index: -1;
 }
 
@@ -79,7 +81,7 @@ body::before {
 .logo {
   font-family: "Margin";
   font-weight: var(--h1-font-weight);
-  font-size: var(--h1-font-size);
+  font-size: clamp(42px, 10vw, 122px);
   color: var(--softlight);
   text-align: center;
   z-index: 1;
@@ -137,7 +139,7 @@ body::before {
 
 .side-menu a {
   color: black;
-  font-size: 32px;
+  font-size: clamp(18px, 5vw, 32px);
   text-decoration: none;
   font-family: "Caveat";
 }
@@ -191,7 +193,6 @@ body::before {
    Main
 ========================= */
 
-
 #kickan {
   scroll-margin-top: 100px;
 }
@@ -200,53 +201,67 @@ body::before {
   scroll-margin-top: 100px;
 }
 
-#wasabi {
-  scroll-margin-top: 100px;
-}
-
-#tingeling {
-  scroll-margin-top: 100px;
-}
-
-#zuck {
-  scroll-margin-top: 100px;
-}
-
-
-.katt-container {
+.kattungar-container {
     display: flex;
     flex-direction: column;
     padding: 40px 15px;
     max-width: 800px;
     margin: auto;
-    gap: 40px;
+    gap: 0px;
 }
 
-.katt {
+.kull {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 60px;
+
+    padding: 20px 10px 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    
+    background-color: var(--softlight);
+    border-radius: 20px;
+}
+
+.kull-rubrik {
+    font-family: "Caveat", Helvetica, sans-serif;
+    font-size: 42px;
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+.kull-rubrik span {
+    display: block;
+    font-size: 18px;
+    font-family: "Caveat";
+}
+
+.kattunge {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
   border-radius: 20px;
 
   text-align: left;
-  gap: 40px;
+  gap: 20px;
 
   background-color: var(--softlight);
   box-sizing: border-box;
-  padding: 40px;
+  padding: 20px;
   border: 2px solid rgba(0,0,0,0.08);
 }
 
 .carousel {
   position: relative;
-  width: 250px;
-  flex: 0 0 auto;
-  touch-action: pan-y;
-  user-select: none; 
+  flex: 1 1 50%;
   overflow: hidden;
+  touch-action: pan-y;
+  user-select: none;
 }
 
 .carousel-track {
@@ -256,11 +271,12 @@ body::before {
 }
 
 .carousel img {
-  flex: 0 0 100%;
   width: 100%;
-  display: block;
-  height: 250px;
+  height: auto;
   object-fit: cover;
+  aspect-ratio: 5 / 4;
+  flex-shrink: 0;
+
   border: 1px solid var(--pink);
   border-radius: 16px;
 }
@@ -307,47 +323,30 @@ body::before {
 .info {
   display: flex;
   flex-direction: column;
+  flex: 1 1 50%;
   gap: 2px;
+  padding: 0;
 }
 
 .info p {
   margin: 0;
-  font-size: 24px;
+  font-size: 32px;
   font-family: "Caveat", Helvetica, sans-serif;
+}
+
+.status.tingad {
+  color: orange;
+}
+
+.status.tillganglig {
+  color: var(--green);
 }
 
 .info strong {
+  color: black;
   font-weight: 600;
   font-size: 18px;
   font-family: Helvetica, sans-serif;
-}
-
-.info p:last-child {
-  margin-top: 20px;
-  font-size: 30px;
-}
-
-.kull-btn {
-  display: inline-flex;
-  width: fit-content;
-  align-self: flex-start;
-  margin: 30px 60px 0 ;
-  padding: 6px 12px;
-
-  background-color: var(--paws);
-  color: var(--black);
-  text-decoration: none;
-
-  border-radius: 10px;
-  font-family: "Caveat", Helvetica, sans-serif;
-  font-size: 22px;
-
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.kull-btn:hover {
-  box-shadow: 0 6px 10px rgba(0,0,0,0.25);
 }
 
 
@@ -425,33 +424,38 @@ body::before {
 
 @media (max-width: 800px) {
 
-  .side-menu {
-    width: 100%;
-    gap: 3px;
+  .kattunge {
+    gap: 5px;
   }
+
+  .side-menu {
+      width: 100%;
+      gap: 3px;
+    }
 
   .side-menu a {
     font-size: 18px;
   }
 
-  .katt {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
-    gap: 40px;
+  .carousel {
+    flex: 2;
   }
 
   .info {
-    gap: 2px;
+    gap: 10px;
+    flex: 1;
+    padding: 0px 3px;
   }
 
-  .carousel {
-    width: 300px;
-}
+  .info p {
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-  .carousel img {
-    height: 250px;
+  .info strong {
+    font-size: 16px;
   }
 
   .footer-inner {
@@ -468,5 +472,19 @@ body::before {
   .footer-sektion {
     align-items: center;
     text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .info p {
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .info strong {
+    font-size: 14px;
   }
 }
