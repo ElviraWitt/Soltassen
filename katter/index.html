@@ -216,8 +216,26 @@
 
     <script>
 
+      const loader = document.getElementById("loader");
+
+      let loaderTimeout;
+      let loaderVisible = false;
+
+      // Starta timer (0.2 sek)
+      loaderTimeout = setTimeout(() => {
+        loader.style.opacity = "1";
+        loader.style.pointerEvents = "all";
+        loaderVisible = true;
+      }, 200);
+
+      // När sidan är klar
       window.addEventListener("load", () => {
-      document.getElementById("loader").style.display = "none";
+        clearTimeout(loaderTimeout);
+
+      if (loaderVisible) {
+        loader.style.opacity = "0";
+        loader.style.pointerEvents = "none";
+      }
       });
 
       lottie.loadAnimation({

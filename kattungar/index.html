@@ -255,9 +255,27 @@
         </div>
     </footer>
 
-    <script>
+  <script>
+    const loader = document.getElementById("loader");
+
+    let loaderTimeout;
+    let loaderVisible = false;
+
+    // Starta timer (0.2 sek)
+    loaderTimeout = setTimeout(() => {
+      loader.style.opacity = "1";
+      loader.style.pointerEvents = "all";
+      loaderVisible = true;
+    }, 200);
+
+    // När sidan är klar
     window.addEventListener("load", () => {
-    document.getElementById("loader").style.display = "none";
+      clearTimeout(loaderTimeout);
+
+    if (loaderVisible) {
+      loader.style.opacity = "0";
+      loader.style.pointerEvents = "none";
+    }
     });
 
     lottie.loadAnimation({
@@ -298,26 +316,26 @@
 
 
     document.querySelectorAll(".carousel").forEach(carousel => {
-      const track = carousel.querySelector(".carousel-track");
-      const images = track.querySelectorAll("img");
-      const dotsContainer = carousel.querySelector(".carousel-dots");
+    const track = carousel.querySelector(".carousel-track");
+    const images = track.querySelectorAll("img");
+    const dotsContainer = carousel.querySelector(".carousel-dots");
 
-      let index = 0;
-      let startX = 0;
-      let currentX = 0;
-      let isDragging = false;
+    let index = 0;
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
 
       // skapa dots
       images.forEach((_, i) => {
-        const dot = document.createElement("span");
-        if (i === 0) dot.classList.add("active");
+      const dot = document.createElement("span");
+      if (i === 0) dot.classList.add("active");
 
-        dot.addEventListener("click", () => {
-          index = i;
-          updateCarousel();
-        });
+      dot.addEventListener("click", () => {
+        index = i;
+        updateCarousel();
+      });
 
-        dotsContainer.appendChild(dot);
+      dotsContainer.appendChild(dot);
       });
 
       const dots = dotsContainer.querySelectorAll("span");
@@ -356,19 +374,19 @@
         isDragging = false;
       });
 
-      const leftZone = carousel.querySelector(".carousel-click.left");
-      const rightZone = carousel.querySelector(".carousel-click.right");
+    const leftZone = carousel.querySelector(".carousel-click.left");
+    const rightZone = carousel.querySelector(".carousel-click.right");
 
-      rightZone.addEventListener("click", () => {
-        index = Math.min(index + 1, images.length - 1);
-        updateCarousel();
-      });
-
-      leftZone.addEventListener("click", () => {
-        index = Math.max(index - 1, 0);
-        updateCarousel();
-      });
+    rightZone.addEventListener("click", () => {
+      index = Math.min(index + 1, images.length - 1);
+      updateCarousel();
     });
-    </script>
+
+    leftZone.addEventListener("click", () => {
+      index = Math.max(index - 1, 0);
+      updateCarousel();
+    });
+  });
+  </script>
 </body>
 </html>
