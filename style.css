@@ -324,11 +324,18 @@ body {
   z-index: 1;
 }
 
+.uppdaterad {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+
 .intro {
-  padding: 10px 40px;
+  padding: 0px 40px 10px;
   max-width: 1000px;
 
   text-align: center;
+  margin-top: 0;
   margin-bottom: 20px;
 }
 
@@ -352,18 +359,22 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 30px;
 }
 
 .nav-kattunge {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .nav-kattunge h2 {
   margin-bottom: 2px;
+}
+
+.nav-kattunge p a{
+  color: #000;
 }
 
 .kattunge-btns {
@@ -587,6 +598,10 @@ body {
     text-align: center;
   }
 
+  .nav-kattunge h2{
+    align-self: center;
+  }
+
   .nav-kattunge p {
     text-align: center;
   }
@@ -594,6 +609,11 @@ body {
   .katter-bild {
     margin-top: -20px;
   }
+
+  .kattunge-btns {
+    align-self: center;
+  }
+
 
   .katt-btns {
     gap: 10px;
@@ -645,7 +665,7 @@ body {
 
 @media (max-width: 600px) {
   .logo {
-    font-size: 52px;
+    font-size: 72px;
     top: 64%;
     left: 40%;
   }
