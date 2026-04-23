@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @font-face {
@@ -15,17 +15,17 @@
    Variabler
 ========================= */
 :root {
-    --green: #C3C471;
-    --softlight: #FFFFBF;
-    --paws: #FFF68C;
-    --black: #000;
-    --pink: #FFBFDB;
-    --h1-font-family: "Caveat", Helvetica, sans-serif;
-    --h1-font-size: 64px;
-    --h1-font-weight: 400;
-    --h3-font-family: "Inter-Regular", Helvetica, sans-serif;
-    --h3-font-size: 24px;
-    --h3-font-weight: 400;
+  --green: #C3C471;
+  --softlight: #FFFFBF;
+  --paws: #FFF68C;
+  --black: #000;
+  --pink: #FFBFDB;
+  --h1-font-family: "Caveat", Helvetica, sans-serif;
+  --h1-font-size: 64px;
+  --h1-font-weight: 400;
+  --h3-font-family: "Inter-Regular", Helvetica, sans-serif;
+  --h3-font-size: 24px;
+  --h3-font-weight: 400;
 }
 
 html {
@@ -36,58 +36,39 @@ html {
 /* =========================
    Body / startsida container
 ========================= */
+
 body {
-    margin: 0;
-    font-family: var(--h3-font-family);
-    background-color: #FFF68C;
-    color: var(--black);
+  margin: 0 auto;
+  font-family: var(--h3-font-family);
+  font-size: clamp(14px, 2.5vw, 22px);
+  background-color: var(--softlight);
+  color: var(--black);
 }
 
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero,
+.navbar,
+.main,
+.footer {
   width: 100%;
-  height: 100%;
-
-  background-image: url("../img/paw-print-background-pattern/Paw Print Background Pattern.jpg");
-  background-size: 1600px;
-  background-repeat: repeat;
-
-  opacity: 0.1;
-  z-index: -1;
+  max-width: none;
 }
 
 /* =========================
    Loading screen
 ========================= */
-
 .loader {
   position: fixed;
   inset: 0;
   background: var(--softlight);
+
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-}
-
-#loader {
-  position: fixed;
-  inset: 0;
-  background: #FFF68C;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
+  
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-
-  z-index: 9999;
 }
 
 .loader-content {
@@ -163,7 +144,16 @@ body::before {
   
   display: flex;
   align-items: center;
-  justify-content: flex-end
+  justify-content: flex-end;
+}
+
+.logo {
+  font-family: "Margin";
+  font-size: clamp(22px, 10vw, 102px);
+  font-weight: var(--h1-font-weight);
+  color: var(--softlight);
+  margin: 0;
+  line-height: 1;
 }
 
 .hamburger {
@@ -277,240 +267,218 @@ body::before {
   overflow: hidden;
 }
 
-.logo {
-  font-family: "Margin";
-  font-weight: var(--h1-font-weight);
-  font-size: var(--h1-font-size);
-  color: var(--softlight);
-  text-align: center;
+/* =========================
+  Main
+========================= */
+.main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../img/paw-print-background-pattern/Paw Print Background Pattern.jpg");
+  background-size: 400px 400px;
+  background-repeat: repeat;
+
+  opacity: 0.1;
+}
+
+.main {
+  width: 100%;
+  padding: 20px 30px;
+
+  background-color: var(--paws);
+
+  margin-top: -10px;
+
+  position: relative;
+  z-index: 2;
+  
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.2);
+
+  font-family: Helvetica, sans-serif;
+  font-size: clamp(18px, 20px, 22px);
+}
+
+.main-container {
+  max-width: 1800px;
+  margin: 10px auto; 
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+
+  background-color: var(--softlight);
+  position: relative;
   z-index: 1;
 }
 
 
-/* =========================
-   Main
-========================= */
-
-
-#kickan {
-  scroll-margin-top: 100px;
-}
-
-#elize {
-  scroll-margin-top: 100px;
-}
-
-#wasabi {
-  scroll-margin-top: 100px;
-}
-
-#tingeling {
-  scroll-margin-top: 100px;
-}
-
-#zuck {
-  scroll-margin-top: 100px;
-}
-
-
-.katt-container {
-  display: flex;
-  flex-direction: column;
-  padding: 40px 15px;
+.faq-page {
+  width: 100%;
   max-width: 800px;
-  margin: auto;
-  gap: 40px;
-}
-
-.katt {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  border-radius: 20px;
-
-  text-align: left;
-  gap: 40px;
-
-  background-color: var(--softlight);
-  box-sizing: border-box;
-  padding: 40px;
-  border: 2px solid rgba(0,0,0,0.08);
-}
-
-.carousel {
-  position: relative;
-  width: 250px;
-  flex: 0 0 auto;
-  touch-action: pan-y;
-  user-select: none; 
-  overflow: hidden;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.3s ease;
-  will-change: transform;
-}
-
-.carousel img {
-  flex: 0 0 100%;
-  width: 100%;
-  display: block;
-  height: 250px;
-  object-fit: cover;
-  border: 1px solid var(--pink);
-  border-radius: 16px;
-}
-
-/* klickzoner */
-.carousel-click {
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.carousel-click.left {
-  left: 0;
-}
-
-.carousel-click.right {
-  right: 0;
-}
-
-/* indikatorer */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 8px;
-}
-
-.carousel-dots span {
-  width: 8px;
-  height: 8px;
-  background: #ccc;
-  border-radius: 50%;
-  display: block;
-  cursor: pointer;
-}
-
-.carousel-dots .active {
-  background: #333;
-}
-
-.info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 8px;
 }
 
-.info p {
-  margin: 0;
-  font-size: 24px;
-  font-family: "Caveat", Helvetica, sans-serif;
+.faq-page h2 {
+  margin-bottom: 16px;
+  text-align: center;
 }
 
-.info strong {
-  font-weight: 600;
-  font-size: 18px;
-  font-family: Helvetica, sans-serif;
-}
-
-.info p:last-child {
-  margin-top: 20px;
-  font-size: 30px;
-}
-
-.kull-btn {
-  display: inline-flex;
-  width: fit-content;
-  align-self: flex-end;
-  padding: 10px 18px;
-  margin-top: 15px;
-
-  background-color: var(--paws);
+.faq-kategori {
+  font-family: "Caveat", sans-serif;
+  font-size: clamp(20px, 4vw, 34px);
+  font-weight: 400;
+  margin: 24px 0 8px;
+  padding-left: 4px;
   color: var(--black);
-  text-decoration: none;
-
-  border-radius: 50px;
-  font-family: "Caveat", Helvetica, sans-serif;
-  font-size: 22px;
-
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.kull-btn:hover {
-  box-shadow: 0 6px 10px rgba(0,0,0,0.25);
+.faq-page ul {
+  padding-left: 20px;
+  margin: 8px 0;
+  line-height: 1.8;
 }
 
+/* =========================
+   FAQ / Accordion
+========================= */
+.accordion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.accordion-item {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--paws);
+}
+
+.accordion-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  padding: 18px 24px;
+
+  font-family: Helvetica, sans-serif;
+  font-size: clamp(16px, 2.5vw, 24px);
+  color: var(--black);
+  text-align: left;
+}
+
+.accordion-btn:hover {
+  opacity: 0.8;
+}
+
+.accordion-icon {
+  width: 12px;
+  height: 12px;
+  border-right: 2.5px solid var(--black);
+  border-bottom: 2.5px solid var(--black);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  margin-bottom: 4px;
+}
+
+.accordion-item.open .accordion-icon {
+  transform: rotate(-135deg);
+  margin-bottom: -4px;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.accordion-content p {
+  padding: 0 24px 20px;
+  margin: 0;
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1.6;
+}
+
+.accordion-content ul {
+  padding: 0 24px 20px 44px;
+  margin: 0;
+  line-height: 1.8;
+}
 
 /* =========================
    Footer
 ========================= */
 .footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
 
-    background-color: var(--green);
-    padding: 60px 20px;
-    flex-wrap: wrap;
-    gap: 40px;
+  align-items: flex-start;
+
+  background-color: var(--green);
+  padding: 60px 10px;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
 .footer-inner {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 140px);
+  width: 100%;
 
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer-left {
-    display: flex;
+  display: flex;
 }
 
 .footer-right {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  gap: 40px;
 }
 
 .footer-sektion {
-    display: flex;
-    flex-direction:column;
-    align-items: flex-start;
-    gap: 12px;
-    width: auto;
+  display: flex;
+  flex-direction:column;
+  align-items: flex-start;
+  gap: 12px;
+  width: auto;
 }
 
 .footer-sektion h3 {
-    font-family: "Margin";
-    font-size: 32px;
-    letter-spacing: 2px;
-    margin: 0;
-    text-align: left;
+  font-family: "Margin";
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin: 0;
+  text-align: left;
 }
 
 .footer-sektion p,
 .footer-sektion a {
-    font-size: 16px;
-    color: var(--black);
-    text-decoration: none;
-    text-align: left;
+  font-size: 16px;
+  color: var(--black);
+  text-decoration: none;
+  text-align: left;
 }
 
 .footer-sektion ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-sektion ul li {
@@ -518,15 +486,31 @@ body::before {
 }
 
 .footer-sektion ul li a {
-    text-decoration: none;
-    color: var(--black);
+  text-decoration: none;
+  color: var(--black);
+}
+
+.footer-attribution {
+  align-self: center;
+  display: block;
+  margin-top: 40px;
+  text-align: center;
+  opacity: 0.6;
+
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+
+.footer-attribution:hover {
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
   .side-menu {
-    width: 100%;
     gap: 3px;
   }
 
@@ -534,26 +518,10 @@ body::before {
     font-size: 18px;
   }
 
-  .katt {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
-    gap: 40px;
-    padding: 15px 15px;
-  }
-
-  .katt-container {
-    margin: 20px;
-  }
-
-  .info {
-    gap: 2px;
-    align-self: flex-start;
-  }
-
-  .carousel {
-    width: 100%;
+  .main-container {
+    margin: 10px auto; 
+    padding: 20px;
+    gap: 60px;
   }
 
   .footer-inner {
@@ -570,5 +538,17 @@ body::before {
   .footer-sektion {
     align-items: center;
     text-align: center;
+  }
+}
+
+
+@media (max-width: 600px) {
+  
+  :root {
+    --h1-font-size: 42px;
+    --h1-font-weight: 300;
+    --h3-font-family: "Inter-Regular", Helvetica, sans-serif;
+    --h3-font-size: 34px;
+    --h3-font-weight: 300;
   }
 }
