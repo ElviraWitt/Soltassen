@@ -165,7 +165,7 @@ body::before {
   
   display: flex;
   align-items: center;
-  justify-content: flex-end
+  justify-content: flex-end;
 }
 
 .hamburger {
@@ -530,12 +530,11 @@ body::before {
   }
 
   .side-menu {
-      width: 100%;
-      gap: 3px;
-    }
+    gap: 3px;
+  }
 
   .side-menu a {
-    font-size: 18px;
+    font-size: 32px;
   }
 
   .carousel {
@@ -576,6 +575,17 @@ body::before {
   }
 }
 
+@media (max-width: 600px) {
+  
+  :root {
+    --h1-font-size: 42px;
+    --h1-font-weight: 300;
+    --h3-font-family: "Inter-Regular", Helvetica, sans-serif;
+    --h3-font-size: 34px;
+    --h3-font-weight: 300;
+  }
+}
+
 @media (max-width: 400px) {
 
   .info p {
@@ -586,6 +596,6 @@ body::before {
   }
 
   .info strong {
-    font-size: 14px;
+    font-size: 32px;
   }
 }

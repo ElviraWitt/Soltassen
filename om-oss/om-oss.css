@@ -460,12 +460,11 @@ body::before {
   }
 
   .side-menu {
-    width: 100%;
     gap: 3px;
   }
 
   .side-menu a {
-    font-size: 18px;
+    font-size: 32px;
   }
 
   /* intro */

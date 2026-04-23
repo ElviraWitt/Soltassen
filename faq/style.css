@@ -198,9 +198,10 @@ body {
   pointer-events: all;
 }
 
+
 .side-menu a {
   color: black;
-  font-size: clamp(18px, 5vw, 32px);
+  font-size: clamp(22px, 6vw, 32px);
   text-decoration: none;
   font-family: "Caveat";
 }
@@ -515,7 +516,7 @@ body {
   }
 
   .side-menu a {
-    font-size: 18px;
+    font-size: 32px;
   }
 
   .main-container {
@@ -543,12 +544,13 @@ body {
 
 
 @media (max-width: 600px) {
-  
-  :root {
-    --h1-font-size: 42px;
-    --h1-font-weight: 300;
-    --h3-font-family: "Inter-Regular", Helvetica, sans-serif;
-    --h3-font-size: 34px;
-    --h3-font-weight: 300;
+
+  .side-menu {
+    gap: 3px;
   }
+
+  .side-menu a {
+    font-size: 32px;
+  }
+  
 }

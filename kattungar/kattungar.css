@@ -185,7 +185,6 @@ body::before {
 
 .hamburger span {
   height: 4px;
-  width: 100%;
   background: var(--softlight);
   border-radius: 3px;
   transition: 0.25s ease;
@@ -212,7 +211,7 @@ body::before {
 
 .side-menu a {
   color: black;
-  font-size: clamp(18px, 5vw, 32px);
+  font-size: clamp(22px, 6vw, 32px);
   text-decoration: none;
   font-family: "Caveat";
 }
@@ -530,17 +529,16 @@ body::before {
 
 @media (max-width: 800px) {
 
-  .kattunge {
-    gap: 5px;
+  .side-menu {
+    gap: 3px;
   }
 
-  .side-menu {
-      width: 100%;
-      gap: 3px;
-    }
-
   .side-menu a {
-    font-size: 18px;
+    font-size: 32px;
+  }
+
+  .kattunge {
+    gap: 5px;
   }
 
   .carousel {
@@ -582,6 +580,14 @@ body::before {
 }
 
 @media (max-width: 400px) {
+
+  .side-menu {
+    gap: 3px;
+  }
+
+  .side-menu a {
+    font-size: 32px;
+  }
 
   .info p {
     font-size: 20px;
